@@ -16,6 +16,8 @@ const config: Config = {
         primary: "#D4D5B1",
         secondary: "#C8B27E",
         danger: "#E46767",
+        dark: "#3c372a",
+        inputColor: "#71674e",
       },
     },
   },
