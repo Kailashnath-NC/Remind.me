@@ -19,9 +19,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <div
           id="app"
-          className="w-full min-h-full bg-default flex items-center justify-center"
+          className="w-full h-full bg-default flex items-center justify-center"
         >
-          {children}
+          <div className="w-app-lg h-[calc(70%-2rem)] flex flex-col gap-2">
+            {children}
+          </div>
         </div>
       </body>
     </html>
