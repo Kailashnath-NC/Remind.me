@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Task() {
   return (
     <div className="bg-primary w-full px-6 py-4 text-md flex items-center justify-between">
@@ -5,6 +7,7 @@ export default function Task() {
         <h1 className="text-md">Task</h1>
         <p className="text-sm">desc</p>
       </div>
+      {/* <Link href="/edit-task"> */}
       <div className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +24,7 @@ export default function Task() {
           />
         </svg>
       </div>
+      {/* </Link> */}
     </div>
   );
 }
