@@ -1,11 +1,16 @@
 import Link from "next/link";
-
-export default function Task() {
+interface TaskProps {
+  title: string;
+  description: string;
+  hh?: number;
+  mm?: number;
+}
+export default function Task({ task }: { task: TaskProps }) {
   return (
     <div className="bg-primary w-full px-6 py-4 text-md flex items-center justify-between">
       <div className="">
-        <h1 className="text-md">Task</h1>
-        <p className="text-sm">desc</p>
+        <h1 className="text-md">{task.title}</h1>
+        <p className="text-sm">{task.description}</p>
       </div>
       {/* <Link href="/edit-task"> */}
       <div className="cursor-pointer">

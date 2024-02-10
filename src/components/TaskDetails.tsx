@@ -1,10 +1,9 @@
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
 import Button from "./Button";
 
 interface FormData {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   hh?: number;
   mm?: number;
 }

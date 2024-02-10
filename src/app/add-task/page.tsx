@@ -5,8 +5,9 @@ import { useState } from "react";
 import { v4 } from "uuid";
 
 interface FormData {
-  title?: string;
-  description?: string;
+  id: string;
+  title: string;
+  description: string;
   hh?: number;
   mm?: number;
 }
@@ -14,6 +15,7 @@ interface FormData {
 export default function AddTask() {
   const router = useRouter();
   const [formState, setFormState] = useState<FormData>({
+    id: v4(),
     title: "",
     description: "",
     hh: 0,
@@ -22,9 +24,12 @@ export default function AddTask() {
 
   function handleAdd(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
-    let dataString = JSON.stringify(formState);
-    localStorage.setItem(v4(), dataString);
-    console.log("Added");
+    if (!localStorage.getItem("tasks")) {
+      localStorage.setItem("tasks", JSON.stringify([formState]));
+    } else {
+      const allTasks = JSON.parse(localStorage.getItem("tasks")!);
+      localStorage.setItem("tasks", JSON.stringify([...allTasks, formState]));
+    }
     router.back();
   }
 
